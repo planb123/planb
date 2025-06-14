@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+  color: #fff;
+  direction: rtl;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth; /* تمرير سلس تلقائي */
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px 40px; /* مسافات أكبر في الأعلى للفصل */
+}
+
+header {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: #ffdd57;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffdd57;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* إضافة تباعد واضح بين الأقسام */
+
+main .section {
+  margin-bottom: 70px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(255, 221, 87, 0.4);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffdd57;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+p, label {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+form {
+  background: rgba(255,255,255,0.12);
+  padding: 30px;
+  border-radius: 14px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  background: #fff;
+  color: #000;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  box-shadow: 0 0 12px 3px #ffdd57;
+}
+
+button {
+  background: #ffdd57;
+  border: none;
+  padding: 16px 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #ffc107;
+  transform: scale(1.03);
+}
+
+.form-message {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-height: 28px;
+}
+
+/* الفوتر */
+
+footer {
+  background: rgba(0,0,0,0.3);
+  text-align: center;
+  padding: 25px 0;
+  font-size: 1rem;
+  color: #ffdd57;
+  letter-spacing: 0.6px;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.4);
+  margin-top: auto;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 15px 10px;
+    font-size: 1rem;
+  }
+
+  .gallery {
+    gap: 15px;
+  }
+
+  .gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  form {
+    width: 90vw;
+  }
+}
